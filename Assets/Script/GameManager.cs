@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    static public GameManager instance; //자기 자신을 인스턴스화 함.
+    static public GameManager instance;
+
+    public AudioSource theAudio;
+
     public float soundValue;
     public float mouseValue;
     public float bgmValue;
-    public AudioSource theAudio;
 
     #region singleton
     void Awake() //객체 생성시 최초 실행.
@@ -17,9 +19,12 @@ public class GameManager : MonoBehaviour
         soundValue = 100f;
         mouseValue = 1f;
         bgmValue = 5f;
+
         theAudio = GetComponent<AudioSource>();
         theAudio.Play();
+
         Screen.SetResolution(1920, 1080, true);
+
         if (instance == null)
         {
             instance = this;

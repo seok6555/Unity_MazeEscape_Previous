@@ -45,7 +45,7 @@ public class ClearMenu : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("MainScene");
         em.gameState = GameState.play;
         Time.timeScale = 1f;
     }
